@@ -7,22 +7,22 @@ let buttonChoices = document.querySelector('.button-choices');
 let displayArea = document.querySelector('#display-result');
 let scoreBoard = document.querySelector('.score-board');
 
-let arr = ["rock", "paper", "scissors"], score = {user: 0, computer: 0};
+let choices = ["rock", "paper", "scissors"], score = {user: 0, computer: 0};
 let user, computer;
 
 buttonChoices.addEventListener('click', (e) => {
     user = e.target.innerText.toLowerCase()
 
-    const result = arr.map((element) => element)
-    computer = arr[Math.floor(Math.random() * result.length)] 
+    const result = choices.map((element) => element)
+    computer = choices[Math.floor(Math.random() * result.length)] 
 
     if (user == computer) {
-        displayWinner('tie')
+        updateDisplay('tie')
     } else {
         if (user == 'scissors' && computer != 'rock' || user == 'paper' && computer != 'scissors' || user == 'rock' && computer != 'paper') {
-            displayWinner(user)
+            updateDisplay(user)
         } else {
-            displayWinner(computer)
+            updateDisplay(computer)
         }
     } 
 
@@ -30,12 +30,12 @@ buttonChoices.addEventListener('click', (e) => {
 
 
 
-function displayWinner(passed){
+function updateDisplay(outcome){
     const strEnding = `<h3>user : ${user}</h3> <h3>computer : ${computer}</h3>`
 
-    if(passed == 'tie'){
+    if(outcome == 'tie'){
         displayArea.innerHTML = `<h2>It's a tie</h2> ${strEnding}`
-    } else if (passed == user ) {
+    } else if (outcome == user ) {
         score.user += 1
         displayArea.innerHTML = `<h2 class="green">User Wins!</h2> ${strEnding}`
     } else {
