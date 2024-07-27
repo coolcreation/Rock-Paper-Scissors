@@ -1,5 +1,5 @@
 
-*{ 
+* { 
     box-sizing: border-box;
     padding: 0;
     margin: 0
@@ -16,34 +16,72 @@ body{
     color: white;
 }
 h1{
+    font-size: 1.8rem;
     margin: 0 0 4rem 0;
 }
 .button-choices button{
-    font-size: 1.4rem;
-    color: white;
-    background-color: black;
+    position: relative;
     border: 2px solid rgb(141, 181, 255);
     border-radius: 10px;
-    padding: .4rem 1rem;
-    margin: 0 .2rem
+    margin: 0 .5rem;
+    overflow: hidden;
 }
-.button-choices button:hover{
+.button-choices button::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    width: 65%;
+    height: 70%;
+    content: '';
+    border: 10px solid rgb(36, 36, 36);
+    border-radius: 15px;
+}
+.button-choices button::after{
+    position: absolute;
+    inset: 0;
+    content: '';
+    border: 10px solid rgb(36, 36, 36);;
+}
+.button-choices button img{
+    width: 90px;
+    height: 80px;
+}
+.reset-game{
+    visibility: hidden;
+    width: 330px;
+    height: 40px;
+    font-size: 1.4rem;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    border: 2px solid rgb(141, 181, 255);
+    margin: 1rem 0 0 0;
+    border-radius: 10px;
+}
+.reset-game.active{
+    visibility: visible;
+}
+.button-choices button:hover, .reset-game:hover{
     cursor: pointer;
     border-color: rgb(0, 102, 255)
 }
 #display-result{
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    width: 370px;
+    width: 340px;
     height: 150px;
     color: white;
     background-color: #131313;
     border: 4px dotted rgb(255, 255, 255);
     line-height: 1rem;
     margin-top: 1rem;
+}
+#display-result.active{
+    visibility: visible;
 }
 #display-result h2 {
     color: rgb(141, 181, 255)
@@ -55,7 +93,7 @@ h1{
     color: rgb(240, 0, 0) !important
 }
 .score-board{
-    width: 330px;
+    width: 320px;
     height: 30px;
     display: flex;
     justify-content: space-between;
@@ -66,3 +104,4 @@ h1{
     padding: 0 .2rem;
     font-size: 1.4rem
 }
+

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta description="Rock-Paper-Scissors Game">
+    <meta description="Rock-Paper-Scissors Game, learning GIT, and implementing a functional approach which allows for unit testing">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Jeff">  
     <!------------------------------------------------------------------------------------------------
@@ -10,7 +10,9 @@
     Rock-Paper-Scissors Game    
     Using this game to practice GIT, and Functional Programming via unit testing, and refactoring
     -------------------------------------------------------------------------------------------------->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
     <title>Rock-Paper-Scissors Game</title>
 </head>
 
@@ -19,14 +21,16 @@
 
      <h2>Please choose your weapon!</h2>
     <div class="button-choices">
-       <button type="button" id="paper">Paper</button>
-       <button type="button" id="rock">Rock</button>
-       <button type="button" id="scissors">Scissors</button>
+       <button title="paper" type="button" id="paper"><img src="images/paper_image.png" alt="paper image"></button>
+       <button title="rock" type="button" id="rock"><img src="images/rock_image.png" alt="rock image"></button>
+       <button title="scissors" type="button" id="scissors"><img src="images/scissors_image.png" alt="scissors image"></button>
     </div>
 
     <div id="display-result"></div>
     <div class="score-board"></div>
 
-    <script src="index.js"></script>
+    <button title="reset-game" type="button" class="reset-game">Reset Game</button>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
